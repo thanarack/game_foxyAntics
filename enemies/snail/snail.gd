@@ -7,6 +7,7 @@ extends EnemyBase
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	super._ready()
 	pass
 
 
@@ -20,19 +21,19 @@ func _physics_process(delta):
 		velocity.x = speed * _facing
 
 	move_and_slide()
+	flip_me()
 
-	if is_on_floor() == true:
-		if is_on_wall() == true || floor_detection.is_colliding() == false:
-			flip_me()
 
 func flip_me() -> void:
-	# Flip the snail
-	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+	if is_on_floor() == true:
+		if is_on_wall() == true || floor_detection.is_colliding() == false:
+			# Flip the snail
+			animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
 
-	# Flip the floor detection
-	floor_detection.position.x = floor_detection.position.x * -1
+			# Flip the floor detection
+			floor_detection.position.x = floor_detection.position.x * -1
 
-	if _facing == FACING.LEFT:
-		_facing = FACING.RIGHT
-	else:
-		_facing = FACING.LEFT
+			if _facing == FACING.LEFT:
+				_facing = FACING.RIGHT
+			else:
+				_facing = FACING.LEFT
