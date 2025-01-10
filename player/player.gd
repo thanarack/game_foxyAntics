@@ -91,3 +91,7 @@ func set_state(new_state: PLAYER_STATE) -> void:
 			animation_player.play("jump")
 		PLAYER_STATE.FALL:
 			animation_player.play("fall")
+
+
+func _on_hitbox_area_entered(area):
+	print("player hit box: ", area)
