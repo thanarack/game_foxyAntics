@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 class_name Player
 
-
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var debug_label = $DebugLabel
 @onready var sound_player = $SoundPlayer
+@onready var shooter = $Shooter
 
 const GRAVITY: float = 1200.0
 const RUN_SPEED: float = 120.0
@@ -29,13 +29,7 @@ func _physics_process(delta):
 	update_debug_label()
 
 	if Input.is_action_just_pressed("shoot") == true:
-		ObjectMaker.create_bullet(
-			Vector2.RIGHT,
-			300.0,
-			20.0,
-			ObjectMaker.BULLET_KEY.PLAYER,
-			global_position
-		)
+		shoot()
 
 
 func update_debug_label() -> void:
@@ -44,6 +38,13 @@ func update_debug_label() -> void:
 		PLAYER_STATE.keys()[_state],
 		velocity.x, velocity.y
 	]
+
+
+func shoot() -> void:
+	if sprite_2d.flip_h == true:
+		shooter.shoot(Vector2.LEFT)
+	else:
+		shooter.shoot(Vector2.RIGHT)
 
 
 # get the user's input
