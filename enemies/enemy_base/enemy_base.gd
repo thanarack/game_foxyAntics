@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name EnemyBase
 
-enum FACING {LEFT = -1, RIGHT = 1}
+enum FACING {LEFT = -1, RIGHT = 1} # left is x -1, right is x 1
 
 const OFF_SCREEN_KILL_ME: float = 1000.0
 
@@ -46,4 +46,8 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	pass # Replace with function body.
+	pass
+
+
+func _on_hitbox_area_entered(area):
+	print("Enemy hit: ", area.name)
