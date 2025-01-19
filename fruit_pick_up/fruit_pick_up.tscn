@@ -516,7 +516,7 @@ script = ExtResource("1_1eyrn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ux4d1")
 animation = &"kiwi"
-frame_progress = 0.191547
+frame_progress = 0.759888
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ou2h0")

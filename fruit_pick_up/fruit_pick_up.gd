@@ -23,6 +23,13 @@ func _process(delta):
 	if _stopped == true:
 		return
 
+	# gravity is pulling the fruit down, so we move the fruit down by
+	# the current speed (which is negative, so it moves up) times delta
+	# (which is the time since the last frame). Then we add the gravity
+	# times delta to the speed, to make the fruit accelerate down.
+	#
+	# When the fruit hits the ground (i.e., its position is greater than
+	# the start y), we set the flag to stop updating
 	position.y += _speed_y * delta
 	_speed_y += GRAVITY * delta
 
