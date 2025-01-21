@@ -5,7 +5,7 @@ extends Area2D
 
 const FRUITS: Array = ["melon", "banana", "cherry", "kiwi"]
 const GRAVITY: float = 120.0
-const JUMP: float = -42.0
+const JUMP: float = -80.0
 const POINT: int = 2
 
 var _start_y: float
