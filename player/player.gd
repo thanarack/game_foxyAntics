@@ -90,7 +90,6 @@ func calculate_state() -> void:
 
 func apply_hurt_jump() -> void:
 	set_state(PLAYER_STATE.HURT)
-	animation_player.play("hurt")
 	velocity = HURT_JUMP_VELOCITY
 	hurt_timer.start()
 
@@ -131,6 +130,8 @@ func set_state(new_state: PLAYER_STATE) -> void:
 			animation_player.play("jump")
 		PLAYER_STATE.FALL:
 			animation_player.play("fall")
+		PLAYER_STATE.HURT:
+			animation_player.play("hurt")
 
 
 func _on_hitbox_area_entered(area):
