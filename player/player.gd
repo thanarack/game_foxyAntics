@@ -116,7 +116,7 @@ func set_state(new_state: PLAYER_STATE) -> void:
 		return
 
 	if _state == PLAYER_STATE.FALL:
-		if new_state == PLAYER_STATE.IDLE or new_state == PLAYER_STATE.RUN:
+		if new_state == PLAYER_STATE.IDLE || new_state == PLAYER_STATE.RUN:
 			SoundManager.play_clip(sound_player, SoundManager.SOUND_LAND)
 
 	_state = new_state
