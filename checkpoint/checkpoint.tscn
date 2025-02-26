@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cofjjam0nxfox"]
+[gd_scene load_steps=16 format=3 uid="uid://cofjjam0nxfox"]
 
+[ext_resource type="Script" path="res://checkpoint/checkpoint.gd" id="1_nhpcg"]
 [ext_resource type="Texture2D" uid="uid://cr8ssrohuolan" path="res://assets/items/checkpoint.png" id="1_pm4bt"]
 
 [sub_resource type="Animation" id="Animation_fm33q"]
@@ -150,17 +151,19 @@ states/Start/position = Vector2(207, 105)
 states/appear/node = SubResource("AnimationNodeAnimation_nhxip")
 states/appear/position = Vector2(377, 189)
 states/flag_flap/node = SubResource("AnimationNodeAnimation_g8cci")
-states/flag_flap/position = Vector2(738, 189)
+states/flag_flap/position = Vector2(751, 189)
 states/flag_open/node = SubResource("AnimationNodeAnimation_gjsqu")
 states/flag_open/position = Vector2(566, 189)
 transitions = ["Start", "appear", SubResource("AnimationNodeStateMachineTransition_5yyr2"), "appear", "flag_open", SubResource("AnimationNodeStateMachineTransition_srnio"), "flag_open", "flag_flap", SubResource("AnimationNodeStateMachineTransition_nhe3n")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sg8hy"]
-size = Vector2(11.5, 47.5)
+size = Vector2(17.75, 47.5)
 
 [node name="Checkpoint" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
+monitoring = false
+script = ExtResource("1_nhpcg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(13, -32)
@@ -181,5 +184,9 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/on_trigger = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, -24)
+position = Vector2(21.875, -24)
 shape = SubResource("RectangleShape2D_sg8hy")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
