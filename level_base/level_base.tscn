@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://oi8wfpvhgdxs"]
+[gd_scene load_steps=12 format=4 uid="uid://oi8wfpvhgdxs"]
 
 [ext_resource type="Texture2D" uid="uid://dlj0comx6a6ff" path="res://assets/tiles/Terrain (16x16).png" id="1_k4soc"]
 [ext_resource type="Script" path="res://level_base/level_base.gd" id="1_te4a8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cfuwhfxaf2c26" path="res://player/player.tscn" id="3_oa3cv"]
 [ext_resource type="PackedScene" uid="uid://s6k84xyqqxro" path="res://enemies/snail/snail.tscn" id="6_i4mqd"]
 [ext_resource type="PackedScene" uid="uid://q2j8ww70rpng" path="res://boss/boss.tscn" id="6_n1l20"]
+[ext_resource type="PackedScene" uid="uid://b2kta0l074ag2" path="res://moving_platform/moving_platform.tscn" id="7_qud6a"]
+[ext_resource type="PackedScene" uid="uid://cn0ls3k2ibntr" path="res://ball_spikes/ball_spikes.tscn" id="8_hgavu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abiev"]
 texture = ExtResource("1_k4soc")
@@ -265,6 +267,12 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_abiev")
 
+[sub_resource type="Curve2D" id="Curve2D_jsn20"]
+_data = {
+"points": PackedVector2Array(50.9421, 22.0736, -50.9421, -22.0736, 539, -43, -18.4076, 13.4018, 18.4076, -13.4018, 538, -163, -26.9693, -23.6503, 26.9693, 23.6503, 625, -163, 53.0825, 18.526, -53.0825, -18.526, 539, -43)
+}
+point_count = 4
+
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_te4a8")
 
@@ -282,10 +290,34 @@ position = Vector2(263, -155)
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_oa3cv")]
-position = Vector2(250, -32)
+position = Vector2(443, -65)
 
 [node name="Snail" parent="." instance=ExtResource("6_i4mqd")]
 position = Vector2(11, -25)
 
 [node name="Boss" parent="." instance=ExtResource("6_n1l20")]
 position = Vector2(500, -14)
+
+[node name="MovingPlatform" parent="." node_paths=PackedStringArray("p1", "p2") instance=ExtResource("7_qud6a")]
+position = Vector2(9, -56)
+p1 = NodePath("../Makers/MP1_1")
+p2 = NodePath("../Makers/MP1_2")
+
+[node name="Makers" type="Node" parent="."]
+
+[node name="MP1_1" type="Marker2D" parent="Makers"]
+position = Vector2(9, -56)
+
+[node name="MP1_2" type="Marker2D" parent="Makers"]
+position = Vector2(9, -140)
+
+[node name="Paths" type="Node" parent="."]
+
+[node name="Spikes1" type="Path2D" parent="Paths"]
+position = Vector2(10.5962, 8)
+scale = Vector2(0.982163, 1.06667)
+curve = SubResource("Curve2D_jsn20")
+
+[node name="BallSpikes" parent="Paths/Spikes1" instance=ExtResource("8_hgavu")]
+position = Vector2(539, -43)
+rotation = -2.73271
