@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfuwhfxaf2c26"]
+[gd_scene load_steps=17 format=3 uid="uid://cfuwhfxaf2c26"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_ckld0"]
 [ext_resource type="Texture2D" uid="uid://dsayxmw3ng7yi" path="res://assets/player/player.png" id="1_jbiio"]
+[ext_resource type="PackedScene" uid="uid://dx5dde1phpyi" path="res://PlayerCam/player_cam.tscn" id="2_gahso"]
 [ext_resource type="PackedScene" uid="uid://dl4luj0bpcgbc" path="res://shooter/shooter.tscn" id="3_3mqb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p68q1"]
@@ -167,6 +168,8 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 32
 script = ExtResource("1_ckld0")
+
+[node name="PlayerCam" parent="." instance=ExtResource("2_gahso")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jbiio")

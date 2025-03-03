@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dlj0comx6a6ff" path="res://assets/tiles/Terrain (16x16).png" id="1_k4soc"]
 [ext_resource type="Script" path="res://level_base/level_base.gd" id="1_te4a8"]
-[ext_resource type="PackedScene" uid="uid://dml6fcjbbx8yr" path="res://player_camera/player_camera.tscn" id="2_1dsrs"]
 [ext_resource type="PackedScene" uid="uid://cfuwhfxaf2c26" path="res://player/player.tscn" id="3_oa3cv"]
 [ext_resource type="PackedScene" uid="uid://s6k84xyqqxro" path="res://enemies/snail/snail.tscn" id="6_i4mqd"]
 [ext_resource type="PackedScene" uid="uid://q2j8ww70rpng" path="res://boss/boss.tscn" id="6_n1l20"]
 [ext_resource type="PackedScene" uid="uid://b2kta0l074ag2" path="res://moving_platform/moving_platform.tscn" id="7_qud6a"]
 [ext_resource type="PackedScene" uid="uid://cn0ls3k2ibntr" path="res://ball_spikes/ball_spikes.tscn" id="8_hgavu"]
+[ext_resource type="PackedScene" uid="uid://jwl7rg2jys63" path="res://FloorSpikes/floor_spikes.tscn" id="9_bcv4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abiev"]
 texture = ExtResource("1_k4soc")
@@ -267,9 +267,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_abiev")
 
-[sub_resource type="Curve2D" id="Curve2D_jsn20"]
+[sub_resource type="Curve2D" id="Curve2D_4cx3x"]
 _data = {
-"points": PackedVector2Array(50.9421, 22.0736, -50.9421, -22.0736, 539, -43, -18.4076, 13.4018, 18.4076, -13.4018, 538, -163, -26.9693, -23.6503, 26.9693, 23.6503, 625, -163, 53.0825, 18.526, -53.0825, -18.526, 539, -43)
+"points": PackedVector2Array(38.2608, 20.602, -38.2608, -20.602, 198, -182, -23.1247, 15.1361, 23.1247, -15.1361, 195, -289, -17.2384, -23.9655, 17.2384, 23.9655, 279, -287, 72.7375, 23.1247, -72.7375, -23.1247, 198, -182)
 }
 point_count = 4
 
@@ -285,12 +285,8 @@ use_parent_material = true
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_xj8el")
 
-[node name="PlayerCamera" parent="." instance=ExtResource("2_1dsrs")]
-position = Vector2(263, -155)
-zoom = Vector2(2, 2)
-
 [node name="Player" parent="." instance=ExtResource("3_oa3cv")]
-position = Vector2(443, -65)
+position = Vector2(197, -114)
 
 [node name="Snail" parent="." instance=ExtResource("6_i4mqd")]
 position = Vector2(11, -25)
@@ -299,25 +295,30 @@ position = Vector2(11, -25)
 position = Vector2(500, -14)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("p1", "p2") instance=ExtResource("7_qud6a")]
-position = Vector2(9, -56)
+position = Vector2(115, -342)
 p1 = NodePath("../Makers/MP1_1")
 p2 = NodePath("../Makers/MP1_2")
 
-[node name="Makers" type="Node" parent="."]
+[node name="Makers" type="Node2D" parent="."]
 
 [node name="MP1_1" type="Marker2D" parent="Makers"]
-position = Vector2(9, -56)
+position = Vector2(115, -342)
 
 [node name="MP1_2" type="Marker2D" parent="Makers"]
-position = Vector2(9, -140)
+position = Vector2(115, -230)
 
-[node name="Paths" type="Node" parent="."]
+[node name="Paths" type="Node2D" parent="."]
 
-[node name="Spikes1" type="Path2D" parent="Paths"]
-position = Vector2(10.5962, 8)
-scale = Vector2(0.982163, 1.06667)
-curve = SubResource("Curve2D_jsn20")
+[node name="Path2D" type="Path2D" parent="Paths"]
+position = Vector2(44, 30)
+curve = SubResource("Curve2D_4cx3x")
 
-[node name="BallSpikes" parent="Paths/Spikes1" instance=ExtResource("8_hgavu")]
-position = Vector2(539, -43)
-rotation = -2.73271
+[node name="BallSpikes" parent="Paths/Path2D" instance=ExtResource("8_hgavu")]
+position = Vector2(198, -182)
+rotation = -2.64765
+
+[node name="Dangers" type="Node2D" parent="."]
+z_index = -1
+
+[node name="FloorSpikes" parent="Dangers" instance=ExtResource("9_bcv4v")]
+position = Vector2(166, -15)
