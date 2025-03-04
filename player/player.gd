@@ -23,7 +23,16 @@ enum PLAYER_STATE {IDLE, RUN, JUMP, FALL, HURT}
 
 var _state: PLAYER_STATE = PLAYER_STATE.IDLE
 var _invincible: bool = false
-var _lives: int = 5
+var _lives: int = 3
+
+func _ready() -> void:
+	print("Player Ready")
+	call_deferred("late_setup") # Run after all node left
+
+
+func late_setup() -> void:
+	SignalManager.on_player_started.emit(_lives)
+
 
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta):

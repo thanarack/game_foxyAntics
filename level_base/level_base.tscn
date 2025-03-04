@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://oi8wfpvhgdxs"]
+[gd_scene load_steps=13 format=4 uid="uid://oi8wfpvhgdxs"]
 
 [ext_resource type="Texture2D" uid="uid://dlj0comx6a6ff" path="res://assets/tiles/Terrain (16x16).png" id="1_k4soc"]
 [ext_resource type="Script" path="res://level_base/level_base.gd" id="1_te4a8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://q2j8ww70rpng" path="res://boss/boss.tscn" id="6_n1l20"]
 [ext_resource type="PackedScene" uid="uid://b2kta0l074ag2" path="res://moving_platform/moving_platform.tscn" id="7_qud6a"]
 [ext_resource type="PackedScene" uid="uid://cn0ls3k2ibntr" path="res://ball_spikes/ball_spikes.tscn" id="8_hgavu"]
+[ext_resource type="PackedScene" uid="uid://p13pxvnionhy" path="res://hud/hud.tscn" id="9_4l8tg"]
 [ext_resource type="PackedScene" uid="uid://jwl7rg2jys63" path="res://FloorSpikes/floor_spikes.tscn" id="9_bcv4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abiev"]
@@ -322,3 +323,7 @@ z_index = -1
 
 [node name="FloorSpikes" parent="Dangers" instance=ExtResource("9_bcv4v")]
 position = Vector2(166, -15)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("9_4l8tg")]
