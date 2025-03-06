@@ -23,7 +23,7 @@ enum PLAYER_STATE {IDLE, RUN, JUMP, FALL, HURT}
 
 var _state: PLAYER_STATE = PLAYER_STATE.IDLE
 var _invincible: bool = false
-var _lives: int = 3
+var _lives: int = 2
 
 func _ready() -> void:
 	print("Player Ready")
@@ -122,6 +122,8 @@ func reduce_lives(reduction: int) -> bool:
 	if _lives <= 0:
 		SignalManager.on_game_over.emit()
 		set_physics_process(false)
+		animation_player.stop()
+		animation_player_invincible.stop()
 		print("PLAYER DIES")
 		return false
 

@@ -15,6 +15,7 @@ func _ready():
 	_hearts = hb_heart.get_children()
 	SignalManager.on_player_hit.connect(on_player_hit)
 	SignalManager.on_player_started.connect(on_player_hit)
+	SignalManager.on_game_over.connect(on_game_over)
 
 
 func on_player_hit(lives: int) -> void:
@@ -23,3 +24,12 @@ func on_player_hit(lives: int) -> void:
 
 	for life in range(_hearts.size()):
 		_hearts[life].visible = lives > life
+
+
+func show_hud() -> void:
+	color_rect.show()
+
+
+func on_game_over() -> void:
+	show_hud()
+	vb_level_complete.show()

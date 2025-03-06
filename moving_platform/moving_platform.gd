@@ -10,6 +10,8 @@ var _tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalManager.on_game_over.connect(_exit_tree)
+
 	set_time_to_move()
 	set_moving()
 	print("MP Ready")

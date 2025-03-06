@@ -165,7 +165,7 @@ _data = {
 "invincible": SubResource("Animation_07gb7")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["moveables", "player"]]
 collision_layer = 32
 script = ExtResource("1_ckld0")
 
