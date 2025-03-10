@@ -29,8 +29,9 @@ func save_scores() -> void:
 
 
 func on_game_over() -> void:
-  _score_history.append({"score": _score})
-  save_scores()
+  if _score > 0:
+    _score_history.append({"score": _score})
+    save_scores()
 
 
 func load_scores_history() -> void:
