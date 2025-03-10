@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cfuwhfxaf2c26"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_ckld0"]
+[ext_resource type="Script" uid="uid://c1jem1usgmt5a" path="res://player/player.gd" id="1_ckld0"]
 [ext_resource type="Texture2D" uid="uid://dsayxmw3ng7yi" path="res://assets/player/player.png" id="1_jbiio"]
 [ext_resource type="PackedScene" uid="uid://dx5dde1phpyi" path="res://PlayerCam/player_cam.tscn" id="2_gahso"]
 [ext_resource type="PackedScene" uid="uid://dl4luj0bpcgbc" path="res://shooter/shooter.tscn" id="3_3mqb0"]
@@ -114,12 +114,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qp0i4"]
 _data = {
-"RESET": SubResource("Animation_8j4lm"),
-"fall": SubResource("Animation_83uhh"),
-"hurt": SubResource("Animation_pmxt3"),
-"idle": SubResource("Animation_7xp8f"),
-"jump": SubResource("Animation_agikj"),
-"run": SubResource("Animation_10q2o")
+&"RESET": SubResource("Animation_8j4lm"),
+&"fall": SubResource("Animation_83uhh"),
+&"hurt": SubResource("Animation_pmxt3"),
+&"idle": SubResource("Animation_7xp8f"),
+&"jump": SubResource("Animation_agikj"),
+&"run": SubResource("Animation_10q2o")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_isnfj"]
@@ -161,8 +161,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04qg7"]
 _data = {
-"RESET": SubResource("Animation_jcv31"),
-"invincible": SubResource("Animation_07gb7")
+&"RESET": SubResource("Animation_jcv31"),
+&"invincible": SubResource("Animation_07gb7")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["moveables", "player"]]
@@ -182,7 +182,7 @@ shape = SubResource("RectangleShape2D_p68q1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_qp0i4")
+&"": SubResource("AnimationLibrary_qp0i4")
 }
 autoplay = "idle"
 
@@ -212,7 +212,7 @@ shoot_delay = 0.2
 
 [node name="AnimationPlayerInvincible" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_04qg7")
+&"": SubResource("AnimationLibrary_04qg7")
 }
 
 [node name="InvincibleTimer" type="Timer" parent="."]

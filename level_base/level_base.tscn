@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://oi8wfpvhgdxs"]
+[gd_scene load_steps=14 format=4 uid="uid://oi8wfpvhgdxs"]
 
 [ext_resource type="Texture2D" uid="uid://dlj0comx6a6ff" path="res://assets/tiles/Terrain (16x16).png" id="1_k4soc"]
-[ext_resource type="Script" path="res://level_base/level_base.gd" id="1_te4a8"]
+[ext_resource type="Script" uid="uid://buv4i3l8whbx7" path="res://level_base/level_base.gd" id="1_te4a8"]
 [ext_resource type="PackedScene" uid="uid://cfuwhfxaf2c26" path="res://player/player.tscn" id="3_oa3cv"]
 [ext_resource type="PackedScene" uid="uid://s6k84xyqqxro" path="res://enemies/snail/snail.tscn" id="6_i4mqd"]
 [ext_resource type="PackedScene" uid="uid://q2j8ww70rpng" path="res://boss/boss.tscn" id="6_n1l20"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0ls3k2ibntr" path="res://ball_spikes/ball_spikes.tscn" id="8_hgavu"]
 [ext_resource type="PackedScene" uid="uid://p13pxvnionhy" path="res://hud/hud.tscn" id="9_4l8tg"]
 [ext_resource type="PackedScene" uid="uid://jwl7rg2jys63" path="res://FloorSpikes/floor_spikes.tscn" id="9_bcv4v"]
+[ext_resource type="PackedScene" uid="uid://crf5aut8k1kl4" path="res://enemies/eagle/eagle.tscn" id="10_yek5b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abiev"]
 texture = ExtResource("1_k4soc")
@@ -327,3 +328,6 @@ position = Vector2(166, -15)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("9_4l8tg")]
+
+[node name="Eagle" parent="." groups=["moveables"] instance=ExtResource("10_yek5b")]
+position = Vector2(344, -271)

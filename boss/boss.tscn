@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://q2j8ww70rpng"]
 
-[ext_resource type="Script" path="res://boss/boss.gd" id="1_uhgpx"]
+[ext_resource type="Script" uid="uid://b8dllrwr47wgb" path="res://boss/boss.gd" id="1_uhgpx"]
 [ext_resource type="Texture2D" uid="uid://dcfd8ww3akqcl" path="res://assets/enemies/boss/boss.png" id="1_x3dsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6i5u"]
@@ -185,12 +185,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lkngl"]
 _data = {
-"RESET": SubResource("Animation_eynh0"),
-"arrive": SubResource("Animation_en5aa"),
-"attack": SubResource("Animation_rgto5"),
-"hit": SubResource("Animation_oobhm"),
-"initial_position": SubResource("Animation_5r2xk"),
-"pulse": SubResource("Animation_ec7ev")
+&"RESET": SubResource("Animation_eynh0"),
+&"arrive": SubResource("Animation_en5aa"),
+&"attack": SubResource("Animation_rgto5"),
+&"hit": SubResource("Animation_oobhm"),
+&"initial_position": SubResource("Animation_5r2xk"),
+&"pulse": SubResource("Animation_ec7ev")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_64jir"]
@@ -287,7 +287,7 @@ shape = SubResource("RectangleShape2D_3xaf2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_lkngl")
+&"": SubResource("AnimationLibrary_lkngl")
 }
 autoplay = "arrive"
 

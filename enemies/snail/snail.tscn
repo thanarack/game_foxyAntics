@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://s6k84xyqqxro"]
 
 [ext_resource type="PackedScene" uid="uid://css4oepbopep2" path="res://enemies/enemy_base/enemy_base.tscn" id="1_xqbev"]
-[ext_resource type="Script" path="res://enemies/snail/snail.gd" id="2_pynps"]
+[ext_resource type="Script" uid="uid://c2ni33utvxvot" path="res://enemies/snail/snail.gd" id="2_pynps"]
 [ext_resource type="Texture2D" uid="uid://dldygpjo1r8x3" path="res://assets/enemies/snail/snail.png" id="3_0t37t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6los"]

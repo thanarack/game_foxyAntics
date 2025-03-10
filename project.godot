@@ -12,7 +12,7 @@ config_version=5
 
 config/name="FoxyAntics"
 run/main_scene="res://level_base/level_base.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.png"
 
 [autoload]
@@ -21,6 +21,7 @@ SoundManager="*res://singletons/sound_manager.gd"
 SignalManager="*res://singletons/signal_manager.gd"
 GameManager="*res://singletons/game_manager.gd"
 ObjectMaker="*res://singletons/object_maker.gd"
+ScoreManager="*res://singletons/score_manager.gd"
 
 [display]
 

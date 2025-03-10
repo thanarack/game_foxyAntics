@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2kta0l074ag2"]
 
-[ext_resource type="Script" path="res://moving_platform/moving_platform.gd" id="1_g2ge2"]
+[ext_resource type="Script" uid="uid://cugl5im3ufg8w" path="res://moving_platform/moving_platform.gd" id="1_g2ge2"]
 [ext_resource type="Texture2D" uid="uid://dlj0comx6a6ff" path="res://assets/tiles/Terrain (16x16).png" id="1_jn5im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gu1y"]

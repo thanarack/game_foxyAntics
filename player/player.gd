@@ -124,6 +124,7 @@ func reduce_lives(reduction: int) -> bool:
 		set_physics_process(false)
 		animation_player.stop()
 		animation_player_invincible.stop()
+		invincible_timer.stop()
 		print("PLAYER DIES")
 		return false
 

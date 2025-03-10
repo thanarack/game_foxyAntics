@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn0ls3k2ibntr"]
 
-[ext_resource type="Script" path="res://ball_spikes/ball_spikes.gd" id="1_hyx2e"]
+[ext_resource type="Script" uid="uid://bst2hsd6hxf3h" path="res://ball_spikes/ball_spikes.gd" id="1_hyx2e"]
 [ext_resource type="Texture2D" uid="uid://bklgwdyrttqay" path="res://assets/danger/spiked_ball.png" id="1_ogoi1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2blhm"]
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vqmde"]
 _data = {
-"RESET": SubResource("Animation_30smm"),
-"spin": SubResource("Animation_b8eqh")
+&"RESET": SubResource("Animation_30smm"),
+&"spin": SubResource("Animation_b8eqh")
 }
 
 [node name="BallSpikes" type="PathFollow2D" groups=["moveables"]]
@@ -59,6 +59,6 @@ shape = SubResource("CircleShape2D_2blhm")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hitbox"]
 root_node = NodePath("../CollisionShape2D")
 libraries = {
-"": SubResource("AnimationLibrary_vqmde")
+&"": SubResource("AnimationLibrary_vqmde")
 }
 autoplay = "spin"

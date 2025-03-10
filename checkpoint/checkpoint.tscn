@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cofjjam0nxfox"]
 
-[ext_resource type="Script" path="res://checkpoint/checkpoint.gd" id="1_nhpcg"]
+[ext_resource type="Script" uid="uid://ddxikujqnne6u" path="res://checkpoint/checkpoint.gd" id="1_nhpcg"]
 [ext_resource type="Texture2D" uid="uid://cr8ssrohuolan" path="res://assets/items/checkpoint.png" id="1_pm4bt"]
 
 [sub_resource type="Animation" id="Animation_fm33q"]
@@ -118,10 +118,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kitit"]
 _data = {
-"RESET": SubResource("Animation_fm33q"),
-"appear": SubResource("Animation_r4gmn"),
-"flag_flap": SubResource("Animation_w6lkk"),
-"flag_open": SubResource("Animation_63jrd")
+&"RESET": SubResource("Animation_fm33q"),
+&"appear": SubResource("Animation_r4gmn"),
+&"flag_flap": SubResource("Animation_w6lkk"),
+&"flag_open": SubResource("Animation_63jrd")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nhxip"]

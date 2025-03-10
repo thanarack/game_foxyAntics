@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://css4oepbopep2" path="res://enemies/enemy_base/enemy_base.tscn" id="1_v7mhi"]
 [ext_resource type="Texture2D" uid="uid://bj4xlhoa64hqf" path="res://assets/enemies/eagle/eagle-attack.png" id="2_5gr1x"]
-[ext_resource type="Script" path="res://enemies/eagle/eagle.gd" id="2_rvaqi"]
+[ext_resource type="Script" uid="uid://bcwf2xc8n7yod" path="res://enemies/eagle/eagle.gd" id="2_rvaqi"]
 [ext_resource type="PackedScene" uid="uid://dl4luj0bpcgbc" path="res://shooter/shooter.tscn" id="4_jh0bh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1b5f"]
