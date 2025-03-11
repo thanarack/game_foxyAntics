@@ -18,7 +18,8 @@ func _ready():
 
 
 func _exit_tree() -> void:
-	_tween.kill()
+	if _tween:
+		_tween.kill()
 
 
 func set_time_to_move() -> void:

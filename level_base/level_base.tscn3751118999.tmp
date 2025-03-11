@@ -351,4 +351,4 @@ position = Vector2(344, -271)
 position = Vector2(950, -15)
 
 [node name="ScrollingBg" parent="." instance=ExtResource("12_2jfk7")]
-level_number = 1
+level_number = 4

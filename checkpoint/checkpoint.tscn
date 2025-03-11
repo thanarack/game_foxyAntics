@@ -175,7 +175,7 @@ frame = 26
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_kitit")
+&"": SubResource("AnimationLibrary_kitit")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

@@ -18,6 +18,7 @@ func _ready():
 	SignalManager.on_player_started.connect(on_player_hit)
 	SignalManager.on_game_over.connect(on_game_over)
 	SignalManager.on_score_updated.connect(on_score_updated)
+	SignalManager.on_game_win.connect(on_game_win)
 
 
 func on_player_hit(lives: int) -> void:
@@ -33,6 +34,11 @@ func show_hud() -> void:
 
 
 func on_game_over() -> void:
+	show_hud()
+	vb_level_complete.show()
+
+
+func on_game_win() -> void:
 	show_hud()
 	vb_level_complete.show()
 
