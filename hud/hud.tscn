@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://8s2o5pqwhgtm" path="res://hud/hud.gd" id="1_0cmax"]
 [ext_resource type="LabelSettings" uid="uid://66fmolruntia" path="res://assets/LG_white_48.tres" id="1_kbobj"]
 [ext_resource type="Texture2D" uid="uid://b558prxch4n6t" path="res://assets/items/pixel heart 2.png" id="2_5p27h"]
-[ext_resource type="LabelSettings" uid="uid://ckslj3wdc2i1c" path="res://assets/LG_blue_64.tres" id="3_0aclt"]
 [ext_resource type="LabelSettings" uid="uid://xdiy03a4c0ib" path="res://assets/LG_white_24.tres" id="4_oxbho"]
+[ext_resource type="LabelSettings" uid="uid://3psaebs30yyc" path="res://assets/LG_pink_96.tres" id="4_svhta"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -92,7 +92,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="ColorRect/VBLevelComplete"]
 layout_mode = 2
 text = "LEVEL COMPETE!"
-label_settings = ExtResource("3_0aclt")
+label_settings = ExtResource("4_svhta")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -121,7 +121,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="ColorRect/VBGameOver"]
 layout_mode = 2
 text = "GAME OVER"
-label_settings = ExtResource("3_0aclt")
+label_settings = ExtResource("4_svhta")
 horizontal_alignment = 1
 vertical_alignment = 1
 

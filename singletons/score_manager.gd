@@ -14,6 +14,15 @@ func _ready():
   load_scores_history()
 
 
+func get_score_history() -> Array[int]:
+  var h: Array[int] = []
+  for s in _score_history:
+    if s.score != 0:
+      h.push_back(int(s.score))
+
+  return h
+
+
 func compare_scores(a, b) -> int:
   return b.score < a.score
 

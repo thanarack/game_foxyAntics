@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_op14i")
-font_size = 64
-font_color = Color(0.105882, 0.52549, 0.894118, 1)
+font_size = 96
+font_color = Color(0.910927, 0.0663699, 0.546443, 1)
 outline_size = 2
-outline_color = Color(0.027451, 0.917647, 0.564706, 1)
+outline_color = Color(0.00917095, 0.4393, 0.260381, 1)
