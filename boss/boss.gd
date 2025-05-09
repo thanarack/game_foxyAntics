@@ -3,6 +3,7 @@ extends Node2D
 const TRIGGER_CONDITION: String = "parameters/conditions/on_trigger"
 const HIT_CONDITION: String = "parameters/conditions/on_hit"
 
+@onready var hitbox = $Visual/Hitbox
 @onready var animation_tree = $AnimationTree
 @onready var visual = $Visual
 
@@ -56,6 +57,8 @@ func take_damage() -> void:
 func _on_trigger_area_entered(area):
 	if animation_tree.get(TRIGGER_CONDITION) == false:
 		animation_tree.set(TRIGGER_CONDITION, true)
+	hitbox.monitoring = true
+	hitbox.monitorable = true
 
 
 func _on_hitbox_area_entered(area):
