@@ -32,9 +32,6 @@ func reduce_lives() -> void:
 	print("reduce_lives: ", lives)
 	if lives <= 0:
 		SignalManager.on_boss_killed.emit(points)
-		print("dead")
-		set_process(true)
-		hide()
 		queue_free()
 
 
