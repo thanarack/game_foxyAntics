@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://p13pxvnionhy"]
+[gd_scene load_steps=7 format=3 uid="uid://p13pxvnionhy"]
 
 [ext_resource type="Script" uid="uid://8s2o5pqwhgtm" path="res://hud/hud.gd" id="1_0cmax"]
 [ext_resource type="LabelSettings" uid="uid://66fmolruntia" path="res://assets/LG_white_48.tres" id="1_kbobj"]
 [ext_resource type="Texture2D" uid="uid://b558prxch4n6t" path="res://assets/items/pixel heart 2.png" id="2_5p27h"]
 [ext_resource type="LabelSettings" uid="uid://xdiy03a4c0ib" path="res://assets/LG_white_24.tres" id="4_oxbho"]
 [ext_resource type="LabelSettings" uid="uid://3psaebs30yyc" path="res://assets/LG_pink_96.tres" id="4_svhta"]
+[ext_resource type="AudioStream" uid="uid://djjv0tpq4suj" path="res://assets/sound/game_over.ogg" id="6_fjv1a"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -76,6 +77,7 @@ grow_vertical = 2
 color = Color(0, 0.00392157, 0.0980392, 0.866667)
 
 [node name="VBLevelComplete" type="VBoxContainer" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,3 +133,11 @@ text = "Press Jump For Main Menu"
 label_settings = ExtResource("4_oxbho")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_fjv1a")
+
+[node name="ContinueTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="ContinueTimer" to="." method="_on_continue_timer_timeout"]

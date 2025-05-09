@@ -10,10 +10,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("advance"):
+		GameManager.load_next_level_scene()
+	if Input.is_action_just_pressed("quit"):
+		GameManager.load_main_scene()
+
 
 func _physics_process(delta):
 	pass
+	
 
 func on_game_over() -> void:
 	for mv in get_tree().get_nodes_in_group(GameManager.GROUP_MOVEABLES):

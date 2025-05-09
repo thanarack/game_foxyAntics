@@ -22,3 +22,4 @@ func _on_area_entered(area):
 	print("level complete")
 	SoundManager.play_clip(sound, SoundManager.SOUND_WIN)
 	SignalManager.on_game_win.emit()
+	

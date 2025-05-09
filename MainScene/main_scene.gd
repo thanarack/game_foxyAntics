@@ -10,6 +10,11 @@ func _ready():
 	set_scores()
 
 
+func _process(delta) -> void:
+	if Input.is_action_just_pressed("jump"):
+		GameManager.load_next_level_scene()
+
+
 func set_scores() -> void:
 	for c in grid_container.get_children():
 		grid_container.remove_child(c)
